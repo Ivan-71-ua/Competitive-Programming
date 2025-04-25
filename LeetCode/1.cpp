@@ -26,9 +26,6 @@ static const bool Booster = [](){
 class Solution {
 public:
    std::vector<int> twoSum(std::vector<int>& nums, int target) {
-       std::ios::sync_with_stdio(false);
-      std::cin.tie(nullptr);
-      std::cout.tie(nullptr);
       std::unordered_map<int, int> numMap;
       int n = nums.size();
       for (int i = 0; i < n; i++) {
