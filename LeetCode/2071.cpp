@@ -20,31 +20,31 @@ public:
 			int ptr = m - 1;
 			bool can = true;
 
-			for (int i = mid - 1; i >= 0; i++) {
-					while (ptr >= m - mid && workers[ptr] + strength >= tasks[i]) {
-						ws.push_front(workers[ptr]);
-						ptr--;
-					}
-					if (ws.empty()) {
+			for (int i = mid - 1; i >= 0; i--) {
+				while (ptr >= m - mid && workers[ptr] + strength >= tasks[i]) {
+					ws.push_front(workers[ptr]);
+					ptr--;
+				}
+				if (ws.empty()) {
+					can = false;
+					break;
+				} else if (ws.back() >= tasks[i]) {
+					ws.pop_back();
+				} else {
+					if (p == 0) {
 						can = false;
 						break;
-					} else if (ws.back() >= tasks[i]) {
-						ws.pop_back();
-					} else {
-						if (p == 0) {
-							can = false;
-							break;
-						}
-						p--;
-						ws.pop_front();
 					}
+					p--;
+					ws.pop_front();
+				}
 			}
 
 			if (can) {
-					ans = mid;
-					left = mid + 1;
+				ans = mid;
+				left = mid + 1;
 			} else {
-					right = mid - 1;
+				right = mid - 1;
 			}
 		}
 		return ans;
