@@ -16,7 +16,7 @@ public:
 					if(!stacks[i].empty()) {
 						s[stacks[i].top()] = '*';
 						stacks[i].pop();
-                        break;
+                     break;
 					}
 				}
 			} else {
