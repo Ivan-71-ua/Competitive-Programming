@@ -5,7 +5,7 @@
 
 class Solution {
 public:
-	vector<int> arrayRankTransform(vector<int>& arr) {
+	std::vector<int> arrayRankTransform(std::vector<int>& arr) {
 		int n = arr.size();
 		std::map<int, int> rank;
 		for (auto& num : arr)
