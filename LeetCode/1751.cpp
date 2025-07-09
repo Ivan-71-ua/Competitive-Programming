@@ -5,7 +5,7 @@ class Solution {
 public:
 	int maxValue(std::vector<std::vector<int>>& events, int k) {
 		int n = events.size();
-		 sort(events.begin(), events.end(), [](const vector<int>& a, const vector<int>& b) {
+		 sort(events.begin(), events.end(), [](const std::vector<int>& a, const std::vector<int>& b) {
             return a[1] < b[1];
         });
 		std::vector<std::vector<int>> dp(n + 1, std::vector<int>(k + 1, 0));
