@@ -5,7 +5,9 @@ class Solution {
 public:
 	int maxValue(std::vector<std::vector<int>>& events, int k) {
 		int n = events.size();
-		std::stable_sort(events.begin(), events.end());
+		 sort(events.begin(), events.end(), [](const vector<int>& a, const vector<int>& b) {
+            return a[1] < b[1];
+        });
 		std::vector<std::vector<int>> dp(n + 1, std::vector<int>(k + 1, 0));
 		for (int i = 1; i <= n; i++) {
 			int prev = binarySearch(events, events[i - 1][0]);
