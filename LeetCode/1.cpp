@@ -23,6 +23,8 @@ static const bool Booster = [](){
     return true;
 }();
 
+//   auto init = atexit([]() { ofstream("display_runtime.txt") << "0"; });
+
 class Solution {
 public:
    std::vector<int> twoSum(std::vector<int>& nums, int target) {
